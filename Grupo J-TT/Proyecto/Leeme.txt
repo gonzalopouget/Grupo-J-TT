@@ -1,0 +1,12 @@
+Integrantes:
+- Gonzalo Pouget
+- David Vicari
+
+Titulo del Proyecto:
+ "EduPython"
+
+Resumen:
+   EduPython es una aplicacion informativa y educativa con diversos temas tales como algunos conceptos basicos de Programacion, Matematicas,etc asi como informacion referida al coronavirus, tambien cuenta con actividades para hacer relacionadas con dichos temas.
+
+Herramientas utilizadas:
+   El proyecto va a estar hecho en python 3 usando la biblioteca tkinter para realizar las interfaces graficas(ventanas), vamos a utilizar SublimeText y/o Visual Studio Code para escribir los archivos con el codigo y el ide de python IDLE para reproducirlos.
