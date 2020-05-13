@@ -20,7 +20,7 @@ class VentanaPrincipal:
 
         self.frameTitulo.pack(anchor=CENTER)
 
-        photo = PhotoImage(file = r"C:\Users\Gonza\Desktop\Nueva carpeta (4)\geisinger-covid19-icon.gif")
+        photo = PhotoImage(file = r"C:\Users\Gonza\Desktop\Nueva carpeta (4)\TP4-Grupo-J-TT\Grupo J-TT\Proyecto\geisinger-covid19-icon.gif")
 
         photoimage = photo.subsample(20,20)
 
