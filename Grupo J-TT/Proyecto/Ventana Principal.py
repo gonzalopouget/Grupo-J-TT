@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 from Covid import Covid
+from categorias import Categorias
 
 class VentanaPrincipal:
 
@@ -17,10 +18,14 @@ class VentanaPrincipal:
         photo = PhotoImage(file = "geisinger-covid19-icon.gif")
         photoimage = photo.subsample(20,20)
         btnCovid = Button(self.principal,text= "Informacion sobre el Covid-19",image=photoimage,compound = LEFT,background="#3498DB",command=self.VentanaCovid).pack(side = BOTTOM)
+        btnCategorias = Button(self.principal,text= "Seleccionar una Categoria",background="#3498DB",command=self.VentanaCategorias).pack()
         self.principal.mainloop()
 
     def VentanaCovid(self):
         ventanaC=Covid(self.principal)
+
+    def VentanaCategorias(self):
+        ventanaC2=Categorias(self.principal)
 
 
 ventana = VentanaPrincipal()
