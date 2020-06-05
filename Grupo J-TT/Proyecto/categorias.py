@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 from tkinter import messagebox
-
+from Temas import Temas
 class Categorias():
      def __init__(self, ventanaPrincipal):
           
@@ -14,13 +14,15 @@ class Categorias():
 
         self.ventanaCategoria.geometry("640x480")
 
+        self.ventanaCategoria.configure(bg="#024747")
+
         self.btnSalir = Button(self.ventanaCategoria, text='Salir',command=self.ventanaCategoria.destroy).pack(side=BOTTOM)
 
-        self.Asignaturas = ttk.Combobox(self.ventanaCategoria, values=["Aritmetica", "Programacion Basica","Geometria","Trigonometria"])
+        self.Asignaturas = ttk.Combobox(self.ventanaCategoria, values=["-En Proceso-", "Programacion Basica","-En Proceso-","-En Proceso-"])
 
-        self.lbl = Label(self.ventanaCategoria,text="Lista de Asignaturas",bg="#483D8B",fg="white",font=("Arial", 20))
+        self.lbl = Label(self.ventanaCategoria,text="Lista de Asignaturas",bg="#024747",fg="white",font=("Arial", 20))
 
-        self.btnSelec = Button(self.ventanaCategoria,text="Seleccionar",command=self.funcionPrueba)
+        self.btnSelec = Button(self.ventanaCategoria,text="Seleccionar",command=self.VentanaTemas)
 
         self.lbl.pack(side=TOP)
 
@@ -30,8 +32,8 @@ class Categorias():
 
         self.Asignaturas.current(1)
      
-     def funcionPrueba(self):
-        messagebox.showinfo(message=self.Asignaturas.get(), title="Asignatura Seleccionada")
+     def VentanaTemas(self):
+        ventanaTemas=Temas(self.ventanaCategoria,self.Asignaturas)
             
          
         
