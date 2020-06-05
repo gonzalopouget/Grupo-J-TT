@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-from tkinter import messagebox
+from Teoria import Teoria
 class Temas():
 
      def __init__(self, ventanaCategorias,Asignaturas):
@@ -33,10 +33,11 @@ class Temas():
             
             self.Temas.current(0)
             
-            self.btnSelec = Button(self.ventanaTemas,text="Seleccionar",command=self.Prueba)
+            self.btnSelec = Button(self.ventanaTemas,text="Seleccionar",command=self.VentanaTeoria)
             
             self.btnSelec.pack()
         
 
-     def Prueba(self):
-         messagebox.showinfo(message=self.Temas.get(), title="Tema Seleccionado")
+     def VentanaTeoria (self):
+
+         ventanaTeo=Teoria(self.ventanaTemas,self.Temas)
