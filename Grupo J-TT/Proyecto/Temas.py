@@ -5,6 +5,9 @@ from Teoria import Teoria
 class Temas():
 
      def __init__(self, ventanaCategorias,Asignaturas):
+        self.VC=ventanaCategorias
+        self.VC.iconify()
+
         self.ventanaTemas = tk.Toplevel(ventanaCategorias)
         
         self.ventanaTemas.title("Temas")
@@ -17,6 +20,7 @@ class Temas():
             self.Temaslbl = Label(self.ventanaTemas,text="-En Proceso-",bg="#024747",fg="white",font=("Arial", 20))
             
             self.Temaslbl.pack()
+            self.btnSalir = Button(self.ventanaTemas, text='Volver',command=self.Volver).pack(side=BOTTOM)
             
             self.Temas = ttk.Combobox(self.ventanaTemas, values=["-En Proceso-", "-En Proceso-","-En Proceso-","-En Proceso-"])
             
@@ -30,6 +34,7 @@ class Temas():
             self.Temas = ttk.Combobox(self.ventanaTemas, values=["Algoritmos", "Programas","Lenguajes de Programacion","Tipos de datos primitivos","Variables y asignaciones","Expresiones","Control de flujo","Funciones y procedimientos","Recursion","Tipos de datos primitivos","Entrada y salida de datos"])
 
             self.Temas.pack()
+            self.btnSalir = Button(self.ventanaTemas, text='Volver',command=self.Volver).pack(side=BOTTOM)
             
             self.Temas.current(0)
             
@@ -41,3 +46,6 @@ class Temas():
      def VentanaTeoria (self):
 
          ventanaTeo=Teoria(self.ventanaTemas,self.Temas)
+     def Volver(self):
+         self.ventanaTemas.destroy()
+         self.VC.deiconify()

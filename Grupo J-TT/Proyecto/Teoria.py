@@ -6,6 +6,8 @@ from Evaluacion import Evaluacion
 class Teoria():
 
     def __init__(self, ventanaTemas,Temas):
+        self.VT=ventanaTemas
+        self.VT.iconify()
         self.ventanaTeoria = tk.Toplevel(ventanaTemas)
         self.ventanaTeoria.title("Teoria")
         self.ventanaTeoria.geometry("640x310")
@@ -38,6 +40,7 @@ class Teoria():
             self.AlgResumen.image = self.Resumen
             self.AlgResumen.place(x=0,y=0)
             self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.ventanaEvaluacion).pack(side = BOTTOM)
+            self.btnSalir = Button(self.ventanaTeoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
             self.notebook.add(self.AlgDefinicion,text="Definicion")
             self.notebook.add(self.AlgTipos,text="Tipos")
             self.notebook.add(self.AlgTecnicas1,text="Tecnicas de diseño(Pagina 1)")
@@ -47,3 +50,7 @@ class Teoria():
             self.notebook.pack()
     def ventanaEvaluacion(self):
         VentanaEvaluacion=Evaluacion(self.ventanaTeoria,self.NumeroTema)
+    
+    def Volver(self):
+        self.ventanaTeoria.destroy()
+        self.VT.deiconify()

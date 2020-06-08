@@ -6,7 +6,8 @@ from Temas import Temas
 class Categorias():
      def __init__(self, ventanaPrincipal):
           
-        ventanaPrincipal.iconify()
+        self.VP=ventanaPrincipal
+        self.VP.iconify()
 
         self.ventanaCategoria = tk.Toplevel(ventanaPrincipal)
 
@@ -16,7 +17,7 @@ class Categorias():
 
         self.ventanaCategoria.configure(bg="#024747")
 
-        self.btnSalir = Button(self.ventanaCategoria, text='Salir',command=self.ventanaCategoria.destroy).pack(side=BOTTOM)
+        self.btnSalir = Button(self.ventanaCategoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
 
         self.Asignaturas = ttk.Combobox(self.ventanaCategoria, values=["-En Proceso-", "Programacion Basica","-En Proceso-","-En Proceso-"])
 
@@ -34,6 +35,10 @@ class Categorias():
      
      def VentanaTemas(self):
         ventanaTemas=Temas(self.ventanaCategoria,self.Asignaturas)
+
+     def Volver(self):
+        self.ventanaCategoria.destroy()
+        self.VP.deiconify()
             
          
         

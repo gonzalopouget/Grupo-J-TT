@@ -10,7 +10,7 @@ class VentanaPrincipal:
         self.principal =  tk.Tk()
         self.principal.title("Educational Python")
         self.principal.resizable(0,0)
-        self.principal.geometry("640x480")
+        self.principal.geometry("480x320")
         self.principal.configure(bg= '#024747')
         self.frameTitulo=ttk.Label(self.principal, text="Educational Python")
         self.frameTitulo.config(background = "#024747", foreground="white",font=("Verdana",32))

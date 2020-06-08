@@ -5,12 +5,14 @@ from tkinter import *
 class Covid():
 
      def __init__(self, ventanaPrincipal):
+        self.VP=ventanaPrincipal
+        self.VP.iconify()
         self.ventanaCovid = tk.Toplevel(ventanaPrincipal)
         self.ventanaCovid.title("Informacion sobre el Covid-19")
         self.ventanaCovid.resizable(0,0)
         self.ventanaCovid.geometry("640x400")
         self.notebook=ttk.Notebook(self.ventanaCovid)
-        self.btnSalir = Button(self.ventanaCovid,text="Volver",background="#3498DB",command=self.ventanaCovid.destroy).pack(side = BOTTOM,anchor =S)
+        self.btnSalir = Button(self.ventanaCovid,text="Volver",background="#3498DB",command=self.Volver).pack(side = BOTTOM,anchor =S)
         self.sintomas = PhotoImage(file="sintomas-coronavirus.gif")
         self.Covid_Sintomas = ttk.Label(self.ventanaCovid,image=self.sintomas)
         self.Covid_Sintomas.image = self.sintomas
@@ -31,3 +33,7 @@ class Covid():
      def clickearLink(self):
         import webbrowser
         webbrowser.open("https://www.argentina.gob.ar/salud/coronavirus-COVID-19")
+
+     def Volver(self):
+        self.ventanaCovid.destroy()
+        self.VP.deiconify()
