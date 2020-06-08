@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
+from Evaluacion import Evaluacion
 
 class Teoria():
 
@@ -36,6 +37,7 @@ class Teoria():
             self.AlgResumen = ttk.Label(self.ventanaTeoria,image=self.Resumen,background="white")
             self.AlgResumen.image = self.Resumen
             self.AlgResumen.place(x=0,y=0)
+            self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.ventanaEvaluacion).pack(side = BOTTOM)
             self.notebook.add(self.AlgDefinicion,text="Definicion")
             self.notebook.add(self.AlgTipos,text="Tipos")
             self.notebook.add(self.AlgTecnicas1,text="Tecnicas de diseño(Pagina 1)")
@@ -43,3 +45,5 @@ class Teoria():
             self.notebook.add(self.AlgRepresentacion,text="Representacion")
             self.notebook.add(self.AlgResumen,text="Resumen")
             self.notebook.pack()
+    def ventanaEvaluacion(self):
+        VentanaEvaluacion=Evaluacion(self.ventanaTeoria,self.NumeroTema)
