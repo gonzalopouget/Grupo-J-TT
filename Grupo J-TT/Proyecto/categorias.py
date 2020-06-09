@@ -7,7 +7,7 @@ class Categorias():
      def __init__(self, ventanaPrincipal):
           
         self.VP=ventanaPrincipal
-        self.VP.iconify()
+        self.VP.withdraw()
 
         self.ventanaCategoria = tk.Toplevel(ventanaPrincipal)
 

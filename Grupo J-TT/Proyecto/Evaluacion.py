@@ -8,7 +8,7 @@ puntos=0
 class Evaluacion():
     def __init__(self,VentanaTeoria,NumeroTema):
         self.k=VentanaTeoria
-        self.k.iconify()
+        self.k.withdraw()
         self.ventanaEvaluacion = tk.Toplevel(VentanaTeoria)
         self.ventanaEvaluacion.title("Evaluacion de Conceptos")
         self.ventanaEvaluacion.geometry("420x220")

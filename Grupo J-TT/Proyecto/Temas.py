@@ -6,7 +6,7 @@ class Temas():
 
      def __init__(self, ventanaCategorias,Asignaturas):
         self.VC=ventanaCategorias
-        self.VC.iconify()
+        self.VC.withdraw()
 
         self.ventanaTemas = tk.Toplevel(ventanaCategorias)
         

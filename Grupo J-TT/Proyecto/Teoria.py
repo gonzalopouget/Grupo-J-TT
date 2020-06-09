@@ -7,7 +7,7 @@ class Teoria():
 
     def __init__(self, ventanaTemas,Temas):
         self.VT=ventanaTemas
-        self.VT.iconify()
+        self.VT.withdraw()
         self.ventanaTeoria = tk.Toplevel(ventanaTemas)
         self.ventanaTeoria.title("Teoria")
         self.ventanaTeoria.geometry("640x310")

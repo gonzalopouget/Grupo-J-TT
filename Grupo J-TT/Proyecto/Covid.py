@@ -6,7 +6,7 @@ class Covid():
 
      def __init__(self, ventanaPrincipal):
         self.VP=ventanaPrincipal
-        self.VP.iconify()
+        self.VP.withdraw()
         self.ventanaCovid = tk.Toplevel(ventanaPrincipal)
         self.ventanaCovid.title("Informacion sobre el Covid-19")
         self.ventanaCovid.resizable(0,0)
