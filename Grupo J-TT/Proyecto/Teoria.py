@@ -10,7 +10,8 @@ class Teoria():
         self.VT.withdraw()
         self.ventanaTeoria = tk.Toplevel(ventanaTemas)
         self.ventanaTeoria.title("Teoria")
-        self.ventanaTeoria.geometry("640x310")
+        self.ventanaTeoria.geometry("660x360")
+        self.ventanaTeoria.resizable(0,0)
         self.ventanaTeoria.configure(bg="#024747")
         if(Temas.get()=="Algoritmos"):
             self.NumeroTema = 0

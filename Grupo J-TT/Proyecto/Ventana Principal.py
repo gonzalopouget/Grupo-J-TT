@@ -17,8 +17,8 @@ class VentanaPrincipal:
         self.frameTitulo.pack(anchor=CENTER)
         photo = PhotoImage(file = "geisinger-covid19-icon.gif")
         photoimage = photo.subsample(20,20)
-        btnCovid = Button(self.principal,text= "Informacion sobre el Covid-19",image=photoimage,compound = LEFT,background="#3498DB",command=self.VentanaCovid).pack(side = BOTTOM)
-        btnCategorias = Button(self.principal,text= "Seleccionar una Categoria",background="#3498DB",command=self.VentanaCategorias).pack()
+        btnCovid = Button(self.principal,text= "Informacion sobre el Covid-19",image=photoimage,background="#3498DB",compound = LEFT,command=self.VentanaCovid).pack(side = BOTTOM)
+        btnCategorias = Button(self.principal,text= "Seleccionar una Categoria",command=self.VentanaCategorias).pack()
         self.principal.mainloop()
 
     def VentanaCovid(self):

@@ -11,8 +11,9 @@ class Covid():
         self.ventanaCovid.title("Informacion sobre el Covid-19")
         self.ventanaCovid.resizable(0,0)
         self.ventanaCovid.geometry("640x400")
+        self.ventanaCovid.configure(bg= '#024747')
         self.notebook=ttk.Notebook(self.ventanaCovid)
-        self.btnSalir = Button(self.ventanaCovid,text="Volver",background="#3498DB",command=self.Volver).pack(side = BOTTOM,anchor =S)
+        self.btnSalir = Button(self.ventanaCovid,text="Volver",command=self.Volver).pack(side = BOTTOM,anchor =S)
         self.sintomas = PhotoImage(file="sintomas-coronavirus.gif")
         self.Covid_Sintomas = ttk.Label(self.ventanaCovid,image=self.sintomas)
         self.Covid_Sintomas.image = self.sintomas

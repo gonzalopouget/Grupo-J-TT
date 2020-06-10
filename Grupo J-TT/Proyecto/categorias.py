@@ -13,7 +13,8 @@ class Categorias():
 
         self.ventanaCategoria.title("Categorias")
 
-        self.ventanaCategoria.geometry("640x480")
+        self.ventanaCategoria.geometry("320x160")
+        self.ventanaCategoria.resizable(0,0)
 
         self.ventanaCategoria.configure(bg="#024747")
 

@@ -13,6 +13,7 @@ class Temas():
         self.ventanaTemas.title("Temas")
         
         self.ventanaTemas.geometry("320x160")
+        self.ventanaTemas.resizable(0,0)
         
         self.ventanaTemas.configure(bg="#024747")
         
