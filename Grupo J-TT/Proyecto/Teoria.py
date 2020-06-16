@@ -2,6 +2,18 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 from Evaluacion import Evaluacion
+from Algoritmos.TeoriaAlg import TeoriaAlg
+from Programas.TeoriaProg import TeoriaProg
+from Expresiones.TeoriaExpr import TeoriaExpr
+from Recursion.TeoriaRec import TeoriaRec
+from LenguajesdeProgramacion.TeoriaLeng import TeoriaLeng
+from DatosEstructurados.TeoriaDatosEstruct import TeoriaDatosEstruct
+from DatosPrimitivos.TeoriaDatosPrim import TeoriaDatosPrim
+from ControldeFlujo.TeoriaFlujo import TeoriaFlujo
+from EntradaSalidadeDatos.TeoriaEntSalDatos import TeoriaEntSalDatos
+from ManejodeErrores.TeoriaManejoErrores import TeoriaManejoErrores
+from Subrutinas.TeoriaSubrutinas import TeoriaSubrutinas
+from VariablesyAsignaciones.TeoriaVarAsignaciones import TeoriaVarAsignaciones
 
 class Teoria():
 
@@ -14,44 +26,30 @@ class Teoria():
         self.ventanaTeoria.resizable(0,0)
         self.ventanaTeoria.configure(bg="#024747")
         if(Temas.get()=="Algoritmos"):
-            self.NumeroTema = 0
-            self.notebook=ttk.Notebook(self.ventanaTeoria)
-            self.Definicion = PhotoImage(file="Algoritmos/Definicion.gif")
-            self.AlgDefinicion = ttk.Label(self.ventanaTeoria,image=self.Definicion,background="white")
-            self.AlgDefinicion.image = self.Definicion
-            self.AlgDefinicion.place(x=0,y=0)
-            self.Tipos = PhotoImage(file="Algoritmos/Tipos.gif")
-            self.AlgTipos = ttk.Label(self.ventanaTeoria,image=self.Tipos,background="white")
-            self.AlgTipos.image = self.Tipos
-            self.AlgTipos.place(x=0,y=0)
-            self.Tecnicas1 = PhotoImage(file="Algoritmos/TecnicasDiseño1.gif")
-            self.AlgTecnicas1 = ttk.Label(self.ventanaTeoria,image=self.Tecnicas1,background="white")
-            self.AlgTecnicas1.image = self.Tecnicas1
-            self.AlgTecnicas1.place(x=0,y=0)
-            self.Tecnicas2 = PhotoImage(file="Algoritmos/TecnicasDiseño2.gif")
-            self.AlgTecnicas2 = ttk.Label(self.ventanaTeoria,image=self.Tecnicas2,background="white")
-            self.AlgTecnicas2.image = self.Tecnicas2
-            self.AlgTecnicas2.place(x=0,y=0)
-            self.Representacion = PhotoImage(file="Algoritmos/Representacion.gif")
-            self.AlgRepresentacion = ttk.Label(self.ventanaTeoria,image=self.Representacion,background="white")
-            self.AlgRepresentacion.image = self.Representacion
-            self.AlgRepresentacion.place(x=0,y=0)
-            self.Resumen = PhotoImage(file="Algoritmos/Resumen.gif")
-            self.AlgResumen = ttk.Label(self.ventanaTeoria,image=self.Resumen,background="white")
-            self.AlgResumen.image = self.Resumen
-            self.AlgResumen.place(x=0,y=0)
-            self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.ventanaEvaluacion).pack(side = BOTTOM)
-            self.btnSalir = Button(self.ventanaTeoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
-            self.notebook.add(self.AlgDefinicion,text="Definicion")
-            self.notebook.add(self.AlgTipos,text="Tipos")
-            self.notebook.add(self.AlgTecnicas1,text="Tecnicas de diseño(Pagina 1)")
-            self.notebook.add(self.AlgTecnicas2,text="Tecnicas de diseño(Pagina 2)")
-            self.notebook.add(self.AlgRepresentacion,text="Representacion")
-            self.notebook.add(self.AlgResumen,text="Resumen")
-            self.notebook.pack()
+            alg=TeoriaAlg(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Programas"):
+            prog=TeoriaProg(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Expresiones"):
+            expr=TeoriaExpr(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Recursion"):
+            rec=TeoriaRec(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Lenguajes de Programacion"):
+            leng=TeoriaLeng(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Tipos de datos estructurados"):
+            estruct=TeoriaDatosEstruct(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Tipos de datos primitivos"):
+            prim=TeoriaDatosPrim(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Control de flujo"):
+            flujo=TeoriaFlujo(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Entrada y salida de datos"):
+            entsal=TeoriaEntSalDatos(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Manejo de Errores"):
+            manejo=TeoriaManejoErrores(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Subrutinas"):
+            subrutinas=TeoriaSubrutinas(self.ventanaTeoria,self.VT)
+        elif(Temas.get()=="Variables y Asignaciones"):
+            variables=TeoriaVarAsignaciones(self.ventanaTeoria,self.VT)
+        
     def ventanaEvaluacion(self):
         VentanaEvaluacion=Evaluacion(self.ventanaTeoria,self.NumeroTema)
     
-    def Volver(self):
-        self.ventanaTeoria.destroy()
-        self.VT.deiconify()

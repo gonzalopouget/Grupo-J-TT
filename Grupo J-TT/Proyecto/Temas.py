@@ -32,8 +32,7 @@ class Temas():
             
             self.Temaslbl.pack()
             
-            self.Temas = ttk.Combobox(self.ventanaTemas, values=["Algoritmos", "Programas","Lenguajes de Programacion","Tipos de datos primitivos","Variables y asignaciones","Expresiones","Control de flujo","Funciones y procedimientos","Recursion","Tipos de datos primitivos","Entrada y salida de datos"])
-
+            self.Temas = ttk.Combobox(self.ventanaTemas, values=["Algoritmos", "Programas","Lenguajes de Programacion","Tipos de datos primitivos","Variables y Asignaciones","Expresiones","Control de flujo","Subrutinas","Recursion","Tipos de datos estructurados","Entrada y salida de datos","Manejo de Errores"])
             self.Temas.pack()
             self.btnSalir = Button(self.ventanaTemas, text='Volver',command=self.Volver).pack(side=BOTTOM)
             
