@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-from Evaluacion import Evaluacion
 from Algoritmos.TeoriaAlg import TeoriaAlg
 from Programas.TeoriaProg import TeoriaProg
 from Expresiones.TeoriaExpr import TeoriaExpr

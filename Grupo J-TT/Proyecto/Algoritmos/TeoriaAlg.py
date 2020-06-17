@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
+from Algoritmos.EvaluacionAlg import Evaluacion
 class TeoriaAlg():
 
     def __init__(self,ventana,temas):
@@ -33,7 +33,7 @@ class TeoriaAlg():
             self.AlgResumen = ttk.Label(ventana,image=self.Resumen,background="white")
             self.AlgResumen.image = self.Resumen
             self.AlgResumen.place(x=0,y=0)
-            #self.btnEvaluacion = Button(ventana,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
+            self.btnEvaluacion = Button(ventana,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
             self.btnSalir = Button(ventana, text='Volver',command=self.Volver).pack(side=BOTTOM)
             self.notebook.add(self.AlgDefinicion,text="Pag 1")
             self.notebook.add(self.AlgTipos,text="Pag 2")
@@ -45,3 +45,6 @@ class TeoriaAlg():
     def Volver(self):
         self.ventanaTeoria.destroy()
         self.VT.deiconify()
+
+    def Evaluacion(self):
+        VentanaEva=Evaluacion(self.ventanaTeoria)

@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
+from LenguajesdeProgramacion.EvaluacionLeng import Evaluacion
 class TeoriaLeng():
 
     def __init__(self,ventana,Temas):
@@ -29,7 +29,7 @@ class TeoriaLeng():
             self.LengResumen = ttk.Label(ventana,image=self.Resumen,background="white")
             self.LengResumen.image = self.Resumen
             self.LengResumen.place(x=0,y=0)
-            #self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
+            self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
             self.btnSalir = Button(self.ventanaTeoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
             self.notebook.add(self.LengDefinicion,text="Pag 1")
             self.notebook.add(self.LengProcesadores,text="Pag 2")
@@ -40,3 +40,6 @@ class TeoriaLeng():
     def Volver(self):
         self.ventanaTeoria.destroy()
         self.VT.deiconify()
+
+    def Evaluacion(self):
+         VentanaEva=Evaluacion(self.ventanaTeoria)

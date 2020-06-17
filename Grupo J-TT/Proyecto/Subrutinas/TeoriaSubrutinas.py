@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
+from Subrutinas.EvaluacionSubrutinas import Evaluacion
 class TeoriaSubrutinas():
 
     def __init__(self,ventana,Temas):
@@ -37,7 +37,7 @@ class TeoriaSubrutinas():
             self.SubrutinasResumen = ttk.Label(ventana,image=self.Resumen,background="white")
             self.SubrutinasResumen.image = self.Resumen
             self.SubrutinasResumen.place(x=0,y=0)
-            #self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
+            self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
             self.btnSalir = Button(self.ventanaTeoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
             self.notebook.add(self.SubrutinaDefinicion,text="Pag 1")
             self.notebook.add(self.SubrutinaDeclaracion,text="Pag 2")
@@ -51,3 +51,6 @@ class TeoriaSubrutinas():
     def Volver(self):
         self.ventanaTeoria.destroy()
         self.VT.deiconify()
+
+    def Evaluacion(self):
+        VentanaEva=Evaluacion(self.ventanaTeoria)

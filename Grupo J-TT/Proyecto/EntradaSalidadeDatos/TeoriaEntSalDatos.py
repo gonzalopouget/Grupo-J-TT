@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
+from EntradaSalidadeDatos.EvaluacionEntSalDatos import Evaluacion
 class TeoriaEntSalDatos():
 
     def __init__(self,ventana,Temas):
@@ -29,7 +29,7 @@ class TeoriaEntSalDatos():
             self.EntSalDatosResumen = ttk.Label(ventana,image=self.Resumen,background="white")
             self.EntSalDatosResumen.image = self.Resumen
             self.EntSalDatosResumen.place(x=0,y=0)
-            #self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
+            self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
             self.btnSalir = Button(self.ventanaTeoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
             self.notebook.add(self.EntSalDatosDefinicion,text="Pag 1")
             self.notebook.add(self.EntSalDatosTexto,text="Pag 2")
@@ -40,3 +40,6 @@ class TeoriaEntSalDatos():
     def Volver(self):
         self.ventanaTeoria.destroy()
         self.VT.deiconify()
+
+    def Evaluacion(self):
+         VentanaEva=Evaluacion(self.ventanaTeoria)

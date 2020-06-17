@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
+from ManejodeErrores.EvaluacionManejoErrores import Evaluacion
 class TeoriaManejoErrores():
 
     def __init__(self,ventana,Temas):
@@ -41,7 +41,7 @@ class TeoriaManejoErrores():
             self.ManejoResumen = ttk.Label(ventana,image=self.Resumen,background="white")
             self.ManejoResumen.image = self.Resumen
             self.ManejoResumen.place(x=0,y=0)
-            #self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
+            self.btnEvaluacion = Button(self.ventanaTeoria,text="Evaluacion de conceptos",command=self.Evaluacion).pack(side = BOTTOM)
             self.btnSalir = Button(self.ventanaTeoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
             self.notebook.add(self.ManejoDefinicion,text="Pag 1")
             self.notebook.add(self.ManejoValoresRetorEsp,text="Pag 2")
@@ -55,3 +55,6 @@ class TeoriaManejoErrores():
     def Volver(self):
         self.ventanaTeoria.destroy()
         self.VT.deiconify()
+
+    def Evaluacion(self):
+         VentanaEva=Evaluacion(self.ventanaTeoria)
