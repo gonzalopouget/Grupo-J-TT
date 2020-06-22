@@ -14,7 +14,7 @@ from ManejodeErrores.TeoriaManejoErrores import TeoriaManejoErrores
 from Subrutinas.TeoriaSubrutinas import TeoriaSubrutinas
 from VariablesyAsignaciones.TeoriaVarAsignaciones import TeoriaVarAsignaciones
 
-class Teoria():
+class TeoriaProg():
 
     def __init__(self, ventanaTemas,Temas):
         self.VT=ventanaTemas

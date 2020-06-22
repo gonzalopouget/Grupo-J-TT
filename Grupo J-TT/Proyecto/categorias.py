@@ -20,7 +20,7 @@ class Categorias():
 
         self.btnSalir = Button(self.ventanaCategoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
 
-        self.Asignaturas = ttk.Combobox(self.ventanaCategoria, values=["-En Proceso-", "Programacion Basica","-En Proceso-","-En Proceso-"])
+        self.Asignaturas = ttk.Combobox(self.ventanaCategoria, values=["Git", "Programacion Basica","-En Proceso-"])
 
         self.lbl = Label(self.ventanaCategoria,text="Lista de Asignaturas",bg="#024747",fg="white",font=("Arial", 20))
 
@@ -32,7 +32,7 @@ class Categorias():
 
         self.btnSelec.pack()
 
-        self.Asignaturas.current(1)
+        self.Asignaturas.current(0)
      
      def VentanaTemas(self):
         ventanaTemas=Temas(self.ventanaCategoria,self.Asignaturas)
