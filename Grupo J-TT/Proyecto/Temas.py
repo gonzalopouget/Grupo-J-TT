@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import *
 from TeoriaProgramacion import TeoriaProg
 from TeoriaGit import TeoriaGit
+from TeoriaLineaComandos import TeoriaLineaComandos
 class Temas():
 
      def __init__(self, ventanaCategorias,Asignaturas):
@@ -37,12 +38,24 @@ class Temas():
             self.Temas.current(0)
             self.btnSelec = Button(self.ventanaTemas,text="Seleccionar",command=self.VentanaTeoriaProg)
             self.btnSelec.pack()
+        elif(Asignaturas.get()=="Linea de Comandos"):
+            self.Temaslbl = Label(self.ventanaTemas,text="Linea de Comandos",bg="#024747",fg="white",font=("Arial", 14))
+            self.Temaslbl.pack()
+            self.Temas = ttk.Combobox(self.ventanaTemas, values=["Navegar Sistema de Archivos", "Ver y Cambiar Sistema de Archivos","Redireccionando Entradas y Salidas","Configuracion de Entorno","Bash Scripting"])
+            self.Temas.pack()
+            self.btnSalir = Button(self.ventanaTemas, text='Volver',command=self.Volver).pack(side=BOTTOM)
+            self.Temas.current(0)
+            self.btnSelec = Button(self.ventanaTemas,text="Seleccionar",command=self.VentanaTeoriaLineaComandos)
+            self.btnSelec.pack()
+        
         
 
      def VentanaTeoriaProg(self):
          ventanaTeo=Teoria(self.ventanaTemas,self.Temas)
      def VentanaTeoriaGit(self):
          ventanaTeo=TeoriaGit(self.ventanaTemas,self.Temas)
+     def VentanaTeoriaLineaComandos(self):
+         ventanaTeo=TeoriaLineaComandos(self.ventanaTemas,self.Temas)
      def Volver(self):
          self.ventanaTemas.destroy()
          self.VC.deiconify()

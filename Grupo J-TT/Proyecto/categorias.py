@@ -20,7 +20,7 @@ class Categorias():
 
         self.btnSalir = Button(self.ventanaCategoria, text='Volver',command=self.Volver).pack(side=BOTTOM)
 
-        self.Asignaturas = ttk.Combobox(self.ventanaCategoria, values=["Git", "Programacion Basica","-En Proceso-"])
+        self.Asignaturas = ttk.Combobox(self.ventanaCategoria, values=["Git", "Programacion Basica","Linea de Comandos"])
 
         self.lbl = Label(self.ventanaCategoria,text="Lista de Asignaturas",bg="#024747",fg="white",font=("Arial", 20))
 
