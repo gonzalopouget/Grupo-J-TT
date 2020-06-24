@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 from Programas.EvaluacionProg import EvaluacionProg
-class TeoriaProg():
+class TeoriaProgramas():
 
     def __init__(self,ventana,Temas):
             self.ventanaTeoria=ventana#Aqui se hace una instancia de la ventana teoria que se paso vacia como parametro

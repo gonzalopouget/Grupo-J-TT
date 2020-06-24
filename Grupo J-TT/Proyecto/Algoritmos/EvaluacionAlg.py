@@ -13,6 +13,7 @@ class Evaluacion():
         self.k.withdraw()#Aqui esa ventana pasada como parametro e instanciada anteriormente se minimiza
         self.ventanaEvaluacion = tk.Toplevel(VentanaTeoria)#Aqui se crea la nueva ventana que pasa a ser una ventana hija de la ventana pasada como parametro
         self.ventanaEvaluacion.title("Evaluacion de Conceptos")#Se le pone titulo a la ventana
+        self.ventanaEvaluacion.configure(bg= '#024747')#Se cambia el color del fondo
         self.ventanaEvaluacion.geometry("420x220")#Se le otorga una resolucion que muestre correctamente todos los elementos que van a ir en la pantalla
         self.notebook=ttk.Notebook(self.ventanaEvaluacion)#Dentro de la ventana se crea un notebook para gestionar paneles
 
